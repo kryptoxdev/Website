@@ -1,0 +1,27 @@
+<%- include("../../partials/head") %>
+<%- include("../../partials/nav") %>
+
+<body>
+	<h1 class="p-2 text-white">Games
+	<a class="btn btn-outline-light m-2" href="add/game" role="button"><strong>+</strong> Add Game</a>
+	</h1>
+	<div class="m-2">
+		<div class="row">
+			<% gameArray.forEach((game)=> { %>
+				<div class="card m-2 text-white" style="width:18rem; background-color:#2c3e50">
+					<div class="card-body">
+						<h5 class="card-title"><%= game.name %></h5>
+						<p class="card-text">
+							Duration: <%= game.duration %> Minutes </br>
+							Team Size: <%= game.team_size %> Players </br>
+							Game ID: <%= game.game_id %>
+						</p>
+						<a class=" mt-1 btn editButton" href="edit/game/<%- game.game_id %>" role="button">Edit Game</a>
+						<a class="mt-1 btn deleteButton" href="delete/game/<%- game.game_id %>" role="button">Delete Game</a>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</body>
+</html>
