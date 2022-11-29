@@ -1,11 +1,12 @@
-<%- include("../../partials/nav") %>
-<%- include("../../partials/head") %>
+<%- include("../../../partials/nav") %>
+<%- include("../../../partials/head") %>
 
 <body>
 	<div class="container h-100 d-flex justify-content-center align-items-center">
 		<div class="container w-50 shadow p-3 mb-5rounded">
-			<form action="http://localhost:3000/delete/game/:id" method="post">
+			<form action="http://localhost:3000/player/games/remove/:id/:id2" method="post">
 				<input name="game_id" value="<%= game.game_id %>" hidden> <br>
+				<input name="player_id" value="<%= game.player_id %>"" hidden> <br>
 				<h2>Remove Game from Player</h1>
 				<p>
 					Name: <%= game.name %> <br>
@@ -14,8 +15,8 @@
 					Game ID: <%= game.game_id %>
 				</p>
 				<p class="text-danger"><strong><sub>* This action is irreversible</sub></strong></p>
-				<button class="btn btn-danger  mt-2" type="submit">Delete Game</button>
-				<a class="btn btn-secondary mt-2" href="/games" role="button">Go Back</a>
+				<button class="btn btn-danger  mt-2" type="submit">Remove Game</button>
+				<a class="btn btn-secondary mt-2" href="/player/games/:id" role="button">Go Back</a>
 			</form>
 		</div>
 	</div>

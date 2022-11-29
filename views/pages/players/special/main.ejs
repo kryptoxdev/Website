@@ -17,7 +17,7 @@
 							Game ID: <%= game.game_id %>
 						</p>
 						<a class="mt-1 btn editButton" style="width:233px;"href="/edit/game/<%- game.game_id %>" role="button">Edit Game</a>
-						<a class="mt-1 btn deleteButton" style="width:233px;" href="/delete/game/<%- game.game_id %>" role="button">Remove Player from Game</a>
+						<a class="mt-1 btn deleteButton" style="width:233px;" href="/player/games/remove/<%- game.player_id %>/<%- game.game_id %>" role="button">Remove Player from Game</a>
 					</div>
 				</div>
 			<% }) %>
