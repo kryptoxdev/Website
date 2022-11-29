@@ -25,6 +25,8 @@ function router(app) {
 		});
 	});
 	
+	app.get("/player/games/add/:id", specialController.renderAddGame);
+	
 	app.get("/edit/game/:id", gameController.renderEditGame);
 	
 	app.get("/edit/player/:id", playerController.renderEditPlayer)
@@ -48,6 +50,8 @@ function router(app) {
 	app.post("/delete/player/:id", playerController.deletePlayer);
 	
 	app.post("/player/games/remove/:id/:id2", specialController.removePlayerGame);
+	
+	app.post("/player/games/add/:id", specialController.addPlayerGame);
 }
 
 module.exports = router;
