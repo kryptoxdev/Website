@@ -1,0 +1,20 @@
+<%- include("../../partials/nav") %>
+<%- include("../../partials/head") %>
+
+<body>
+	<div class="container h-100 d-flex justify-content-center align-items-center">
+		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
+			<h2>Edit Game</h2>
+			<form action="http://localhost:3000/edit/player/:id" method="post">
+				<label for="name">Player Name</label> <br>
+				<input class="userInput rounded" type="text" value="<%= player.name %>" name="name"> <br>
+				<label for="email">Email</label> <br>
+				<input class="userInput rounded" type="text" value="<%= player.email %>" name="email"> <br>
+				<input type="hidden" value="<%= player.player_id %>" name="player_id"> <br> 
+				<button class="btn saveButton" type="submit">Save Changes</button>
+				<a class="btn deleteButton" href="/games" role="button">Discard Changes</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

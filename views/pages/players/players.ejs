@@ -1,0 +1,27 @@
+<%- include("../../partials/head") %>
+<%- include("../../partials/nav") %>
+
+<body>
+	<h1 class="p-2 text-white">Players
+	<a class="btn btn-outline-light m-2" href="add/player" role="button"><strong>+</strong> Add Player</a>
+	</h1>
+	<div class="m-2">
+		<div class="row">
+			<% playerArray.forEach((player)=> { %>
+				<div class="card m-2 text-white" style="width:18rem; background-color:#2c3e50">
+					<div class="card-body">
+						<h5 class="card-title"><%= player.name %></h5>
+						<p class="card-text">
+							Email: <%= player.email %> </br>
+							Player ID: <%= player.player_id %>
+						</p>
+						<a class="mt-1 btn gamesButton" href="/player/games/<%- player.player_id %>" role="button">View Games</a> <br>
+						<a class="mt-1 btn editButton" href="edit/player/<%- player.player_id %>" role="button">Edit Player</a>
+						<a class="mt-1 btn deleteButton" href="delete/player/<%- player.player_id %>" role="button">Delete Player</a>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</body>
+</html>

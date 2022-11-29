@@ -61,7 +61,7 @@ function editGame(request, response, next) {
 		"team_size": request.body.team_size,
 	}
 	
-	pool.query(`UPDATE game SET ? WHERE game_id = ${request.body.game_id}`, request.body, (error, result) => {
+	pool.query(`UPDATE game SET ? WHERE game_id = ${request.body.game_id}`, body, (error, result) => {
 		if (error) {
 			throw error;
 		}

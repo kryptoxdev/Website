@@ -1,0 +1,22 @@
+<%- include("../../partials/nav") %>
+<%- include("../../partials/head") %>
+
+<body>
+	<div class="container h-100 d-flex justify-content-center align-items-center">
+		<div class="container w-50 shadow p-3 mb-5 rounded">
+			<form action="http://localhost:3000/delete/player/:id" method="post">
+				<input name="player_id" value="<%= player.player_id %>" hidden> <br>
+				<h2>Delete Player</h1>
+				<p>
+					Name: <%= player.name %> <br>
+					Email: <%= player.email %> <br>
+					Player ID: <%= player.player_id %>
+				</p>
+				<p class="text-danger"><strong><sub>* This action is irreversible</sub></strong></p>
+				<button class="btn btn-danger  mt-2" type="submit">Delete Player</button>
+				<a class="btn btn-secondary mt-2" href="/games" role="button">Go Back</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

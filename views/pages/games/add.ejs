@@ -3,15 +3,15 @@
 
 <body>
 	<div class="container h-100 d-flex justify-content-center align-items-center">
-		<div class="container w-50 shadow p-3 mb-5 bd-body rounded text-white">
+		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
 			<h2>Add Game</h2>
 			<form action="http://localhost:3000/add/game" method="post">
 				<label for="name">Game Name</label> </br>
-				<input class="bg-body rounded" type="text" name="name"> </br>
+				<input class="userInput rounded" type="text" name="name"> </br>
 				<label for="duration">Duration</label> </br>
-				<input class="bg-body rounded" type="text" name="duration"> </br>
+				<input class="userInput rounded" type="text" name="duration"> </br>
 				<label for="team_size">Team Size</label> </br>
-				<input class="bg-body rounded" type="text" name="team_size"> </br>
+				<input class="userInput rounded" type="text" name="team_size"> </br>
 				<button class="btn saveButton  mt-2" type="submit">Add Game</button>
 				<a class="btn deleteButton mt-2" href="/games" role="button">Discard</a>
 			</form>
