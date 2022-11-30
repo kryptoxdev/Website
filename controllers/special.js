@@ -3,13 +3,13 @@ const pool = require("../data/config.js")
 function getPlayerGames(request, response, next) {
 	const id = request.params.id;
 	
-	pool.query("SELECT game.name, duration, team_size, game_id, player_id FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ?", id, (error, result) => {
+	pool.query("SELECT game.name, duration, team_size, game_id, player_id, player.name AS playername FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ?", id, (error, result) => {
 		if(error) {
 			throw error;
 		}
 		
-		
 		response.render("../views/pages/players/special/main", {
+			playername: result[0].playername,
 			playerid: id,
 			playerGamesArray: result
 		})
