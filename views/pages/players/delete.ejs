@@ -2,6 +2,12 @@
 <%- include("../../partials/head") %>
 
 <body>
+	<ol class="breadcrumb p-2">
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/">Home</a></li>
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/players">Players</a></li>
+		<li class="breadcrumb-item breadcrumbCurrent">Delete '<%= player.name %>'</li>
+	</ol>
+	
 	<div class="container h-100 d-flex justify-content-center align-items-center">
 		<div class="container w-50 shadow p-3 mb-5 rounded">
 			<form action="http://localhost:3000/delete/player/:id" method="post">
@@ -14,7 +20,7 @@
 				</p>
 				<p class="text-danger"><strong><sub>* This action is irreversible</sub></strong></p>
 				<button class="btn btn-danger  mt-2" type="submit">Delete Player</button>
-				<a class="btn btn-secondary mt-2" href="/games" role="button">Go Back</a>
+				<a class="btn btn-secondary mt-2" href="/players" role="button">Go Back</a>
 			</form>
 		</div>
 	</div>

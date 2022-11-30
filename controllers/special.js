@@ -19,14 +19,21 @@ function getPlayerGames(request, response, next) {
 function renderAddGame(request, response, next) {
 	const id = request.params.id;
 	
-	pool.query("SELECT game_id, name FROM game", (error, result) => {
+	pool.query("SELECT game_id, game.name FROM game", (error, result) => {
 		if (error) {
 			throw error;
 		}
 		
-		response.render("../views/pages/players/special/add", {
-			playerid: id,
-			gamesArray: result
+		pool.query("SELECT name FROM player WHERE player_id = ?", id, function (nameError, nameResult) {
+			if (nameError) {
+				throw nameError;
+			}
+			
+			response.render("../views/pages/players/special/add", {
+				playerid: id,
+				playername: nameResult[0].name,
+				gamesArray: result
+			})
 		})
 	})
 }
@@ -37,13 +44,20 @@ function renderRemoveGame(request, response, next) {
 		"game_id": request.params.id2
 	}
 	
-	pool.query(`SELECT game.name, duration, team_size, game_id, player_id FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ${body.player_id} AND game_id = ${body.game_id}`, (error, result) => {
+	pool.query(`SELECT game.name AS gamename, duration, team_size, game_id, player_id, player.name FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ${body.player_id} AND game_id = ${body.game_id}`, (error, result) => {
 		if(error) {
 			throw error;
 		}
 		
-		response.render("../views/pages/players/special/remove", {
-			game: result[0]
+		pool.query("SELECT name FROM player WHERE player_id = ?", body.player_id, function (nameError, nameResult) {
+			if (nameError) {
+				throw nameError;
+			}
+			
+			response.render("../views/pages/players/special/remove", {
+				playername: nameResult[0].name,
+				game: result[0]
+			})
 		})
 	})
 }

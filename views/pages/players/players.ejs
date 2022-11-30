@@ -2,9 +2,15 @@
 <%- include("../../partials/nav") %>
 
 <body>
+	<ol class="breadcrumb p-2">
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/">Home</a></li>
+		<li class="breadcrumb-item breadcrumbCurrent">Players</li>
+	</ol>
+	
 	<h1 class="p-2 text-white">Players
 	<a class="btn btn-outline-light m-2" href="add/player" role="button"><strong>+</strong> Add Player</a>
 	</h1>
+		
 	<div class="m-2">
 		<div class="row">
 			<% playerArray.forEach((player)=> { %>

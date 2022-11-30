@@ -2,14 +2,21 @@
 <%- include("../../../partials/head") %>
 
 <body>
+	<ol class="breadcrumb p-2">
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/">Home</a></li>
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/players">Players</a></li>
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/player/games/<%= game.player_id %>"><%= playername %></a></li>
+		<li class="breadcrumb-item breadcrumbCurrent">Remove Game</li>
+	</ol>
+	
 	<div class="container h-100 d-flex justify-content-center align-items-center">
 		<div class="container w-50 shadow p-3 mb-5rounded">
 			<form action="http://localhost:3000/player/games/remove/:id/:id2" method="post">
 				<input name="game_id" value="<%= game.game_id %>" hidden> <br>
 				<input name="player_id" value="<%= game.player_id %>"" hidden> <br>
-				<h2>Remove Game from Player</h1>
+				<h2>Remove Game from <%= playername %></h1>
 				<p>
-					Name: <%= game.name %> <br>
+					Name: <%= game.gamename %> <br>
 					Duration: <%= game.duration %> <br>
 					Team Size: <%= game.team_size %> <br>
 					Game ID: <%= game.game_id %>

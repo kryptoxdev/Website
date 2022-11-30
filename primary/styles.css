@@ -3,6 +3,23 @@ body {
 	color: white;
 }
 
+.breadcrumbPrevious {
+	color: white;
+	text-decoration: underline;
+}
+
+.breadcrumbCurrent {
+	color: white;
+	font-weight: bold;
+}
+
+.gameSelect {
+	color: white;
+	background-color: #34495e;
+	border-style: solid;
+	border-color: #466380;
+}
+
 .userInput {
 	background-color: #34495e;
 	color: white;
