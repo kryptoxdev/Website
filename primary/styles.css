@@ -68,6 +68,10 @@ body {
 	background-color: #27ae60;
 }
 
+.breadcrumbPrevious:hover {
+	color: white;
+}
+
 a:hover {
 	background-color: #22303d;
 }

@@ -1,0 +1,33 @@
+<%- include("../../partials/head") %>
+<%- include("../../partials/nav") %>
+
+<body>
+	<ol class="breadcrumb p-2">
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/">Home</a></li>
+		<li class="breadcrumb-item breadcrumbCurrent">Teams</li>
+	</ol>
+	
+	<h1 class="p-2 text-white">Teams
+	<a class="btn btn-outline-light m-2" href="add/team" role="button"><strong>+</strong> Add Team</a>
+	</h1>
+		
+	<div class="m-2">
+		<div class="row">
+			<% teamArray.forEach((team)=> { %>
+				<div class="card m-2 text-white" style="width:18rem; background-color:#2c3e50">
+					<div class="card-body">
+						<h5 class="card-title"><%= team.name %></h5>
+						<p class="card-text">
+							Game: <%= team.gamename %> </br>
+							Email: <%= team.email %> </br>
+							Team ID: <%= team.team_id %>
+						</p>
+						<a class="mt-1 btn editButton" href="edit/team/<%- team.team_id %>" role="button">Edit Team</a>
+						<a class="mt-1 btn deleteButton" href="delete/team/<%- team.team_id %>" role="button">Delete Team</a>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</body>
+</html>

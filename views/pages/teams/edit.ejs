@@ -1,0 +1,32 @@
+<%- include("../../partials/nav") %>
+<%- include("../../partials/head") %>
+
+<body>
+	<ol class="breadcrumb p-2">
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/">Home</a></li>
+		<li class="breadcrumb-item"><a class="breadcrumbPrevious" href="/teams">Teams</a></li>
+		<li class="breadcrumb-item breadcrumbCurrent">Edit '<%= team.name %>'</li>
+	</ol>
+	
+	<div class="container h-100 d-flex justify-content-center align-items-center">
+		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
+			<h2>Edit Team</h2>
+			<form action="http://localhost:3000/edit/team/:id" method="post">
+				<label for="name">Team Name</label> <br>
+				<input class="userInput rounded" type="text" value="<%= team.name %>" name="name"> <br>
+				<label for="email">Email</label> <br>
+				<input class="userInput rounded" type="text" value="<%= team.email %>" name="email"> <br>
+				<label for="game_id">Game</label>
+				<select name="game_id" class="form-select gameSelect">
+					<% gamesArray.forEach((game) => { %>
+						<option value="<%= game.game_id %>"><%= game.name %></option>
+					<% }) %>
+				</select>
+				<input type="hidden" value="<%= team.team_id %>" name="team_id"> <br> 
+				<button class="btn saveButton" type="submit">Save Changes</button>
+				<a class="btn deleteButton" href="/teams" role="button">Discard Changes</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

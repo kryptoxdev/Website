@@ -1,5 +1,6 @@
 const gameController = require("../controllers/games");
 const playerController = require("../controllers/players");
+const teamController = require("../controllers/teams");
 const specialController = require("../controllers/special");
 
 function router(app) {
@@ -10,6 +11,8 @@ function router(app) {
 	app.get("/games", gameController.getGames);
 	
 	app.get("/players", playerController.getPlayers);
+	
+	app.get("/teams", teamController.getTeams);
 	
 	app.get("/player/games/:id", specialController.getPlayerGames);
 	
@@ -25,11 +28,15 @@ function router(app) {
 		});
 	});
 	
+	app.get("/add/team", teamController.renderAddTeam);
+	
 	app.get("/player/games/add/:id", specialController.renderAddGame);
 	
 	app.get("/edit/game/:id", gameController.renderEditGame);
 	
 	app.get("/edit/player/:id", playerController.renderEditPlayer)
+	
+	app.get("/edit/team/:id", teamController.renderEditTeam);
 	
 	app.get("/delete/game/:id", gameController.renderDeleteGame);
 	
@@ -39,11 +46,15 @@ function router(app) {
 	
 	app.post("/add/game", gameController.addGame);
 	
-	app.post("/add/player", playerController.addPlayer)
+	app.post("/add/player", playerController.addPlayer);
+	
+	app.post("/add/team", teamController.addTeam);
 	
 	app.post("/edit/game/:id", gameController.editGame);
 	
-	app.post("/edit/player/:id", playerController.editPlayer)
+	app.post("/edit/player/:id", playerController.editPlayer);
+	
+	app.post("/edit/team/:id", teamController.editTeam);
 	
 	app.post("/delete/game/:id", gameController.deleteGame);
 	
