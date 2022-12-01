@@ -6,8 +6,6 @@ function getTeams(request, response, next) {
 			throw error;
 		}
 		
-		console.log(result)
-		
 		response.render("../views/pages/teams/teams", {
 			title: "Teams",
 			teamArray: result
@@ -54,8 +52,6 @@ function editTeam(request, response, next) {
 		"name": request.body.name,
 		"email": request.body.email
 	}
-	
-	console.log(request.body);
 	
 	pool.query(`UPDATE team SET ? WHERE team_id = ${request.body.team_id}`, body, (error, result) => {
 		if (error) {
