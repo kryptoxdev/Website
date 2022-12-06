@@ -1,5 +1,6 @@
 <%- include("../../partials/nav") %>
 <%- include("../../partials/head") %>
+<%- include("../../partials/teamValidation") %>
 
 <body>
 	<ol class="breadcrumb p-2">
@@ -8,14 +9,22 @@
 		<li class="breadcrumb-item breadcrumbCurrent">Add Team</li>
 	</ol>
 	
+	<div class="toast-container p-3 bottom-0 end-0">
+		<div class="toast invisible bg-danger" id="alertBox">
+			<div class="toast-body">
+				<p class="m-0" id="alertText">text</p>
+			</div>
+		</div>
+	</div>
+	
 	<div class="container h-100 d-flex justify-content-center align-items-center">
 		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
 			<h2>Add Team</h2>
-			<form action="http://localhost:3000/add/team" method="post">
+			<form action="http://localhost:3000/add/team" onsubmit="return validateForm()" method="post">
 				<label for="name">Team Name</label> </br>
-				<input class="userInput rounded" type="text" name="name"> </br>
+				<input class="userInput rounded" type="text" id="name" name="name"> </br>
 				<label for="email">Email</label> </br>
-				<input class="userInput rounded" type="text" name="email"> </br>
+				<input class="userInput rounded" type="text" id="email" name="email"> </br>
 				<label for="game_id">Game</label>
 				<select name="game_id" class="form-select gameSelect">
 					<% gamesArray.forEach((game) => { %>

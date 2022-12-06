@@ -1,0 +1,26 @@
+<script>
+	function validateForm() {
+		var alertBox = document.getElementById("alertBox");
+		var alertText = document.getElementById("alertText");
+	
+		var playerInput = document.getElementById("name").value;
+		var emailInput = document.getElementById("email").value;
+		
+		var isValid = true;
+		
+		if (playerInput === "" || emailInput == "") {
+			alertBox.classList.remove("invisible")
+			alertBox.classList.add("show")
+			alertText.innerHTML = "<font size='4'><b>&times;</b></font> Fields cannot be empty."
+			isValid  = false;
+		} 
+		if (playerInput.length >= 50) {
+			alertBox.classList.remove("invisible")
+			alertBox.classList.add("show")
+			alertText.innerHTML = "<font size='4'><b>&times;</b></font> Player field must be less than 50 characters"
+			isValid  = false;
+		}
+		
+		return isValid;
+	}
+</script>

@@ -1,0 +1,27 @@
+<script>
+	function validateForm() {
+		var alertBox = document.getElementById("alertBox");
+		var alertText = document.getElementById("alertText");
+	
+		var gameInput = document.getElementById("name").value;
+		var durationInput = document.getElementById("duration").value;
+		var sizeInput = document.getElementById("team_size").value
+		
+		var isValid = true;
+		
+		if (gameInput === "" || durationInput == "" || sizeInput == "") {
+			alertBox.classList.remove("invisible")
+			alertBox.classList.add("show")
+			alertText.innerHTML = "<font size='4'><b>&times;</b></font> Fields cannot be empty."
+			isValid  = false;
+		} 
+		if (gameInput.length >= 50) {
+			alertBox.classList.remove("invisible")
+			alertBox.classList.add("show")
+			alertText.innerHTML = "<font size='4'><b>&times;</b></font> Game field must be less than 50 characters"
+			isValid  = false;
+		}
+		
+		return isValid;
+	}
+</script>
