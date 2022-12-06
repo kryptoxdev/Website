@@ -42,6 +42,8 @@ function router(app) {
 	
 	app.get("/delete/player/:id", playerController.renderDeletePlayer);
 	
+	app.get("/delete/team/:id", teamController.renderDeleteTeam);
+	
 	app.get("/player/games/remove/:id/:id2", specialController.renderRemoveGame);
 	
 	app.post("/add/game", gameController.addGame);
@@ -59,6 +61,8 @@ function router(app) {
 	app.post("/delete/game/:id", gameController.deleteGame);
 	
 	app.post("/delete/player/:id", playerController.deletePlayer);
+	
+	app.post("/delete/team/:id", teamController.deleteTeam);
 	
 	app.post("/player/games/remove/:id/:id2", specialController.removePlayerGame);
 	

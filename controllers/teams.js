@@ -46,6 +46,21 @@ function renderEditTeam(request, response, next) {
 	})
 }
 
+function renderDeleteTeam(request, response, next) {
+	const id = request.params.id;
+	
+	pool.query("SELECT team.name, game.name AS gamename, email, team_id FROM team JOIN game USING (game_id) WHERE team_id = ?", id, (error, result) => {
+		if(error) {
+			throw error;
+		}
+		
+		response.render("../views/pages/teams/delete", {
+			title: "Delete Team",
+			team: result[0]
+		})
+	})
+}
+
 function editTeam(request, response, next) {
 	const body = {
 		"game_id": request.body.game_id,
@@ -72,10 +87,24 @@ function addTeam(request, response, next) {
 	})
 }
 
+function deleteTeam(request, response, next) {
+	const id = request.body.team_id;
+	
+	pool.query("DELETE FROM team WHERE team_id = ?", id, (error, result) => {
+		if (error) {
+			throw error;
+		}
+		
+		response.redirect("/teams");
+	})
+}
+
 module.exports = {
 	getTeams,
 	renderAddTeam,
 	renderEditTeam,
+	renderDeleteTeam,
 	addTeam,
-	editTeam
+	editTeam,
+	deleteTeam
 }
