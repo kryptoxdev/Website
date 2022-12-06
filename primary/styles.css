@@ -1,6 +1,13 @@
 body {
 	background-color: #34495e;
 	color: white;
+	font-family: Calibri;
+}
+
+.homeContainer {
+	display: block;
+	height: 25vh;
+	width: 25vw;
 }
 
 .breadcrumbPrevious {
@@ -48,7 +55,7 @@ body {
 
 .gamesButton {
 	background-color: #2ecc71;
-	width: 223.337px;
+	width: 210.337px;
 	color: white;
 }
 
@@ -72,6 +79,38 @@ body {
 	color: white;
 }
 
-a:hover {
+.link:hover {
 	background-color: #22303d;
+}
+
+#menu {  
+	align-items: center;
+	display: flex;
+	height: 96.5vh;
+	width: 50vw;
+}
+  
+#menu-items {
+	margin-left: 100px;
+	position: relative;
+	width: 25vw;
+}
+
+#menu-items:hover > .menu-item {
+	opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+	color: white;
+	opacity: 1; 
+}
+
+.menu-item {
+	color: white;
+	cursor: pointer;
+	display: block;
+	font-size: 50px;
+	padding: 10px;
+	text-decoration: none;
+	transition: opacity 300ms ease;
 }

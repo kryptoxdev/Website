@@ -8,10 +8,16 @@ function getPlayerGames(request, response, next) {
 			throw error;
 		}
 		
-		response.render("../views/pages/players/special/main", {
-			playername: result[0].playername,
-			playerid: id,
-			playerGamesArray: result
+		pool.query("SELECT name FROM player WHERE player_id = ?", id, function (nameError, nameResult) {
+			if(nameError) {
+				throw nameError;
+			}
+			
+			response.render("../views/pages/players/special/main", {
+				playername: nameResult[0].name,
+				playerid: id,
+				playerGamesArray: result
+			})
 		})
 	})
 }
@@ -65,8 +71,6 @@ function renderRemoveGame(request, response, next) {
 function removePlayerGame(request, response, next) {
 	const playerid = request.body.player_id
 	const gameid = request.body.game_id
-	
-	console.log(gameid + playerid)
 	
 	pool.query(`DELETE FROM gamespecialisation WHERE game_id = ${gameid} AND player_id = ${playerid}`, (error, result) => {
 		if (error) {
