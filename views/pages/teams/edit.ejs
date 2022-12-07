@@ -25,8 +25,9 @@
 				<input class="userInput rounded" type="text" value="<%= team.name %>" name="name" id="name"> <br>
 				<label for="email">Email</label> <br>
 				<input class="userInput rounded" type="text" value="<%= team.email %>" name="email" id="email"> <br>
-				<label for="game_id">Game</label>
-				<select name="game_id" class="form-select gameSelect">
+				<label id="gameLabel" for="game_id">Game</label>
+				<select id="gameSelect" name="game_id" class="form-select gameSelect">
+					<option selected value="<%= team.game_id %>">Please select a game.</option>
 					<% gamesArray.forEach((game) => { %>
 						<option value="<%= game.game_id %>"><%= game.name %></option>
 					<% }) %>

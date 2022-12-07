@@ -53,6 +53,11 @@ body {
 	color: white;
 }
 
+.defaultButton {
+	background-color: #22303d;
+	color: white;
+}
+
 .gamesButton {
 	background-color: #2ecc71;
 	width: 210.337px;
@@ -79,6 +84,11 @@ body {
 	color: white;
 }
 
+.defaultButton:hover {
+	background-color: #24323f;
+	color: white;
+}
+
 .link:hover {
 	background-color: #22303d;
 }
@@ -87,13 +97,13 @@ body {
 	align-items: center;
 	display: flex;
 	height: 96.5vh;
-	width: 50vw;
+	width: 55vw;
 }
   
 #menu-items {
-	margin-left: 100px;
+	margin-left: 125px;
 	position: relative;
-	width: 25vw;
+	width: 20vw;
 }
 
 #menu-items:hover > .menu-item {

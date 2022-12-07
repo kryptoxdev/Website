@@ -67,6 +67,12 @@ function router(app) {
 	app.post("/player/games/remove/:id/:id2", specialController.removePlayerGame);
 	
 	app.post("/player/games/add/:id", specialController.addPlayerGame);
+	
+	app.get("*", (request, response) => {
+		response.render("../views/pages/404", {
+			title: "Page not found"
+		})
+	})
 }
 
 module.exports = router;

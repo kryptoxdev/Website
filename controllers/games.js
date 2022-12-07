@@ -1,7 +1,7 @@
 const pool = require("../data/config.js");
 
 function getGames(request, response, next) {
-	pool.query("SELECT * FROM game", (error, result) => {
+	pool.query("SELECT * FROM game ORDER BY game.name", (error, result) => {
 		if (error) {
 			throw error;
 		}

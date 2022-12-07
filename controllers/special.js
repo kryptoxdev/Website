@@ -3,7 +3,7 @@ const pool = require("../data/config.js")
 function getPlayerGames(request, response, next) {
 	const id = request.params.id;
 	
-	pool.query("SELECT game.name, duration, team_size, game_id, player_id, player.name AS playername FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ?", id, (error, result) => {
+	pool.query("SELECT game.name, duration, team_size, game_id, player_id, player.name AS playername FROM gamespecialisation JOIN game USING (game_id) JOIN player USING (player_id) WHERE player_id = ? ORDER BY game.name", id, (error, result) => {
 		if(error) {
 			throw error;
 		}
@@ -25,7 +25,7 @@ function getPlayerGames(request, response, next) {
 function renderAddGame(request, response, next) {
 	const id = request.params.id;
 	
-	pool.query("SELECT game_id, game.name FROM game", (error, result) => {
+	pool.query("SELECT game_id, game.name FROM game ORDER BY game.name", (error, result) => {
 		if (error) {
 			throw error;
 		}

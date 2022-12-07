@@ -1,7 +1,7 @@
 const pool = require ("../data/config.js");
 
 function getTeams(request, response, next) {
-	pool.query("SELECT team_id, game_id, team.name, email, game.name AS gamename FROM team JOIN game USING (game_id)", (error, result) => {
+	pool.query("SELECT team_id, game_id, team.name, email, game.name AS gamename FROM team JOIN game USING (game_id) ORDER BY team.name", (error, result) => {
 		if(error) {
 			throw error;
 		}
@@ -14,7 +14,7 @@ function getTeams(request, response, next) {
 }
 
 function renderAddTeam(request, response, next) {
-	pool.query("SELECT game_id, game.name FROM game", (error, result) => {
+	pool.query("SELECT game_id, game.name FROM game ORDER BY game.name", (error, result) => {
 		if (error) {
 			throw error;
 		}
@@ -37,6 +37,7 @@ function renderEditTeam(request, response, next) {
 			if (gameError) {
 				throw gameError;
 			}
+			
 			
 			response.render("../views/pages/teams/edit", {
 				team: result[0],
