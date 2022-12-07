@@ -8,7 +8,8 @@ function getGames(request, response, next) {
 		
 		response.render("../views/pages/games/games", {
 			title: "Games",
-			gameArray: result
+			gameArray: result,
+			query: request.query
 		});
 	})
 }
@@ -19,7 +20,7 @@ function addGame(request, response, next) {
 			throw error;
 		} 
 		
-		response.redirect("/games")
+		response.redirect(`/games?name=${request.body.name}&success=true`)
 	});
 }
 

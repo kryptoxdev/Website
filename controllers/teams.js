@@ -41,7 +41,8 @@ function renderEditTeam(request, response, next) {
 			
 			response.render("../views/pages/teams/edit", {
 				team: result[0],
-				gamesArray: gameResult
+				gamesArray: gameResult,
+				query: request.query
 			});
 		})
 	})
@@ -84,7 +85,7 @@ function addTeam(request, response, next) {
 			throw error;
 		}
 		
-		response.redirect("/teams")
+		response.redirect(`/teams?name=${request.body.name}&success=true`)
 	})
 }
 

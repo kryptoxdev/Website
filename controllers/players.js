@@ -8,7 +8,8 @@ function getPlayers(request, response, next) {
 		
 		response.render("../views/pages/players/players", {
 			title: "Players",
-			playerArray: result
+			playerArray: result,
+			query: request.query
 		});
 	})
 }
@@ -19,7 +20,7 @@ function addPlayer(request, response, next) {
 			throw error;
 		}
 		
-		response.redirect("/players")
+		response.redirect(`/players?name=${request.body.name}&success=true`)
 	})
 }
 

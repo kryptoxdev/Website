@@ -16,7 +16,8 @@ function getPlayerGames(request, response, next) {
 			response.render("../views/pages/players/special/main", {
 				playername: nameResult[0].name,
 				playerid: id,
-				playerGamesArray: result
+				playerGamesArray: result,
+				query: request.query
 			})
 		})
 	})
@@ -91,8 +92,9 @@ function addPlayerGame(request, response, next) {
 		if (error) {
 			throw error;
 		}
-
-		response.redirect(`/player/games/${body.player_id}`);
+		
+		
+		response.redirect(`/player/games/${body.player_id}?name=${body.game_id}&success=true`);
 	})
 }
 
