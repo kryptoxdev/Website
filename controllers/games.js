@@ -17,10 +17,10 @@ function getGames(request, response, next) {
 function addGame(request, response, next) {
 	pool.query("INSERT INTO game SET ?", request.body, (error, result) => {
 		if (error) {
-			throw error;
-		} 
-		
-		response.redirect(`/games?name=${request.body.name}&success=true`)
+			response.redirect(`/add/game?success=false`)
+		} else {
+			response.redirect(`/games?name=${request.body.name}&success=true`);
+		}
 	});
 }
 

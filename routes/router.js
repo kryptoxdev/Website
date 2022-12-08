@@ -18,7 +18,8 @@ function router(app) {
 	
 	app.get("/add/game", (request, response) => {
 		response.render("../views/pages/games/add", {
-			title: "Add Game"
+			title: "Add Game",
+			query: request.query
 		});
 	});
 	

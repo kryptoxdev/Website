@@ -9,6 +9,16 @@
 		<li class="breadcrumb-item breadcrumbCurrent">Add Game</li>
 	</ol>
 	
+	<% if (query.success == "false") { %>
+		<div class="toast-container p-3 bottom-0 end-0">
+			<div class="toast show bg-danger" id="alertBox">
+				<div class="toast-body">
+					<p class="m-0" id="alertText">Please only enter numbers into Duration and Team Size</p>
+				</div>
+			</div>
+		</div>
+	<% } %>
+	
 	<div class="toast-container p-3 bottom-0 end-0">
 		<div class="toast invisible bg-danger" id="alertBox">
 			<div class="toast-body">
