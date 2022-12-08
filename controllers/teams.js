@@ -8,7 +8,8 @@ function getTeams(request, response, next) {
 		
 		response.render("../views/pages/teams/teams", {
 			title: "Teams",
-			teamArray: result
+			teamArray: result,
+			query: request.query
 		})
 	})
 }
@@ -20,7 +21,8 @@ function renderAddTeam(request, response, next) {
 		}
 		
 		response.render("../views/pages/teams/add", {
-			gamesArray: result
+			gamesArray: result,
+			query: request.query
 		})
 	})
 }

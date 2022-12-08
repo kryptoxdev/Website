@@ -39,7 +39,8 @@ function renderAddGame(request, response, next) {
 			response.render("../views/pages/players/special/add", {
 				playerid: id,
 				playername: nameResult[0].name,
-				gamesArray: result
+				gamesArray: result,
+				query: request.query
 			})
 		})
 	})
@@ -90,11 +91,10 @@ function addPlayerGame(request, response, next) {
 	
 	pool.query("INSERT INTO gamespecialisation SET ?", body, (error, result) => {
 		if (error) {
-			throw error;
+			response.redirect(`/player/games/add/${body.player_id}?success=false&id=${body.game_id}`)
+		} else {
+			response.redirect(`/player/games/${body.player_id}?name=${body.game_id}&success=true`);
 		}
-		
-		
-		response.redirect(`/player/games/${body.player_id}?name=${body.game_id}&success=true`);
 	})
 }
 
