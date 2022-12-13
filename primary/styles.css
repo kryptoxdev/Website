@@ -64,6 +64,11 @@ body {
 	color: white;
 }
 
+.addButton {
+	background-color: white;
+	color: black;
+}
+
 .editButton:hover {
 	background-color: #d35400;
 }
@@ -78,6 +83,11 @@ body {
 
 .gamesButton:hover {
 	background-color: #27ae60;
+}
+
+.addButton:hover {
+	background-color: rgb(216, 216, 216);
+	color: black;
 }
 
 .breadcrumbPrevious:hover {
