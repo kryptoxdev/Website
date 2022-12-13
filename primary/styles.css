@@ -70,6 +70,17 @@ body {
 	color: black;
 }
 
+.defaultAccordion:not(.collapsed) {
+	background-color: #22303d;
+	color: white;
+	border: none;
+}
+.defaultAccordion.collapsed {
+	background-color: #34495e;
+	color: white;
+	border: none;
+}
+
 .editButton:hover {
 	background-color: #d35400;
 }

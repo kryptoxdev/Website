@@ -11,16 +11,58 @@
 			</div>
 		</div>
 		
+		
+		
 		<div class="darker col-6 col-sm-3 p-2">
-			<h2>ESports Championships</h2>
-			<p>
-				Clicking the respective button on the left, or on the navigation bar, will 
+			<p>Clicking the respective button on the left, or on the navigation bar, will 
 				redirect you to a page that shows data about either Games, Players, or 
-				Teams. On each page you will be able to view, add, edit, and delete data.
-			</p>
-			<p><img src="/icons/game.png"/>&#8194;Games - Contains a list of games.</p>
-			<p><img src="/icons/player.png"/>&#8194;Players - Contains a list of players as well as the ability to view the games they specialize in.</p>
-			<p><img src="/icons/team.png"/>&#8194;Teams - Contains a list of teams.</p>
+				Teams. For more information on these buttons, expand the sections below.</p>
+			<div class="accordion" id="accordionExample"">
+				<div class="accordion-item defaultAccordion">
+				  <h2 class="accordion-header defaultAccordion" id="headingOne">
+					<button class="accordion-button collapsed defaultAccordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						<p><img src="/icons/game.png"/>&#8194;Games
+					</button>
+				  </h2>
+				  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Clicking the games button will take you to the games page where 
+						you will be able to add, edit, and delete games. These games can 
+						be later be used on the players page, in order to add games that 
+						they specialize in.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item defaultAccordion">
+				  <h2 class="accordion-header defaultAccordion" id="headingTwo">
+					<button class="accordion-button collapsed defaultAccordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<p><img src="/icons/player.png"/>&#8194;Player
+					</button>
+				  </h2>
+				  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Clicking the players button will take you to the players page where 
+						you can add, edit, and delete players. Each player can have a name 
+						and an email, as well as this you can add specific games to specific  
+						players.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item defaultAccordion">
+				  <h2 class="accordion-header defaultAccordion" id="headingThree">
+					<button class="accordion-button collapsed defaultAccordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<p><img src="/icons/team.png"/>&#8194;Teams
+					</button>
+				  </h2>
+				  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Clicking the teams button will take you to the teams page where 
+						you can add, edit, and delete teams. Each team has a name and a 
+						email, as well as this each team specializes in an individual game.
+					</div>
+				  </div>
+				</div>
+			  </div>
 		</div>
 	</div>
 </body>
