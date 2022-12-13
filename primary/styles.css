@@ -1,4 +1,5 @@
 body {
+	overflow: hidden;
 	background-color: #34495e;
 	color: white;
 	font-family: Calibri;
