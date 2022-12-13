@@ -8,11 +8,11 @@
 		<li class="breadcrumb-item breadcrumbCurrent">Delete '<%= team.name %>'</li>
 	</ol>
 	
-	<div class="container h-100 d-flex justify-content-center align-items-center">
-		<div class="container w-50 shadow p-3 mb-5 rounded">
+	<div class="container h-100 d-flex justify-content-center align-items-center"  style="width:600px;">
+		<div class="container w-50 shadow p-3 mb-5 darker rounded">
 			<form action="http://localhost:3000/delete/team/:id" method="post">
+				<h2 class="text-center"><strong>Delete Team</strong></h1>
 				<input name="team_id" value="<%= team.team_id %>" hidden> <br>
-				<h2>Delete Team</h1>
 				<p>
 					Name: <%= team.name %> <br>
 					Game: <%= team.gamename %> <br>
@@ -20,8 +20,8 @@
 					Team ID: <%= team.team_id %>
 				</p>
 				<p class="text-danger"><strong><sub>* This action is irreversible</sub></strong></p>
-				<button class="btn btn-danger  mt-2" type="submit">Delete Team</button>
-				<a class="btn btn-secondary mt-2" href="/teams" role="button">Go Back</a>
+				<button class="btn btn-danger mt-2" style="width:123px;" type="submit">Delete Team</button>
+				<a class="btn btn-secondary mt-2" style="width:123px;" href="/teams" role="button">Go Back</a>
 			</form>
 		</div>
 	</div>

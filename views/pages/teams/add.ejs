@@ -17,22 +17,22 @@
 		</div>
 	</div>
 	
-	<div class="container h-100 d-flex justify-content-center align-items-center">
+	<div class="container h-100 d-flex justify-content-center align-items-center" style="width:600px;">
 		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
-			<h2>Add Team</h2>
+			<h2 class="text-center"><strong>Add Team</strong></h2>
 			<form action="http://localhost:3000/add/team" onsubmit="return validateForm()" method="post">
 				<label for="name">Team Name</label> </br>
-				<input class="userInput rounded" type="text" id="name" name="name"> </br>
+				<input class="userInput rounded" style="width:250px;" type="text" id="name" name="name"> </br>
 				<label for="email">Email</label> </br>
-				<input class="userInput rounded" type="text" id="email" name="email"> </br>
+				<input class="userInput rounded" style="width:250px;" type="text" id="email" name="email"> </br>
 				<label for="game_id">Game</label>
-				<select name="game_id" class="form-select gameSelect">
+				<select name="game_id" style="width:250px;" class="form-select gameSelect">
 					<% gamesArray.forEach((game) => { %>
 						<option value="<%= game.game_id %>"><%= game.name %></option>
 					<% }) %>
 				</select>
-				<button class="btn saveButton mt-2" type="submit">Add Team</button>
-				<a class="btn deleteButton mt-2" href="/teams" role="button">Discard</a>
+				<button class="btn saveButton mt-3" style="width:123px;" type="submit">Add Team</button>
+				<a class="btn deleteButton mt-3" style="width:123px;" href="/teams" role="button">Discard</a>
 			</form>
 		</div>
 	</div>
