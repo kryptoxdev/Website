@@ -9,12 +9,10 @@
 		<li class="breadcrumb-item breadcrumbCurrent">Remove Game</li>
 	</ol>
 	
-	<div class="container h-100 d-flex justify-content-center align-items-center">
-		<div class="container w-50 shadow p-3 mb-5rounded">
+	<div class="container h-100 d-flex justify-content-center align-items-center" style="width:1250px;">
+		<div class="container w-50 shadow p-3 mb-5 darker rounded">
 			<form action="http://localhost:3000/player/games/remove/:id/:id2" method="post">
-				<input name="game_id" value="<%= game.game_id %>" hidden> <br>
-				<input name="player_id" value="<%= game.player_id %>"" hidden> <br>
-				<h2>Remove Game from <%= playername %></h1>
+				<h2 class="text-center"><strong>Remove Game from '<%= playername %>'</strong></h1>
 				<p>
 					Name: <%= game.gamename %> <br>
 					Duration: <%= game.duration %> <br>
@@ -22,8 +20,10 @@
 					Game ID: <%= game.game_id %>
 				</p>
 				<p class="text-danger"><strong><sub>* This action is irreversible</sub></strong></p>
-				<button class="btn btn-danger  mt-2" type="submit">Remove Game</button>
-				<a class="btn btn-secondary mt-2" href="/player/games/<%= game.player_id %>" role="button">Go Back</a>
+				<input name="player_id" value="<%= game.player_id %>"" hidden> <br>
+				<button class="btn btn-danger" style="width:123px;" type="submit">Remove Game</button>
+				<a class="btn btn-secondary"style="width:123px;"  href="/player/games/<%= game.player_id %>" role="button">Go Back</a>
+				<input name="game_id" value="<%= game.game_id %>" hidden> <br>
 			</form>
 		</div>
 	</div>

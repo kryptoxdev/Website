@@ -27,18 +27,18 @@
 		</div>
 	</div>
 	
-	<div class="container h-100 d-flex justify-content-center align-items-center">
+	<div class="container h-100 d-flex justify-content-center align-items-center" style="width:600px;">
 		<div class="container w-50 shadow p-3 mb-5 darker rounded text-white">
-			<h2>Add Game</h2>
+			<h2 class="text-center"><strong>Add Game</strong></h2>
 			<form action="http://localhost:3000/add/game" onsubmit="return validateForm()" method="post">
 				<label for="name">Game Name</label> </br>
-				<input class="userInput rounded" type="text" name="name" id="name"> </br>
+				<input class="userInput rounded" style="width: 250px;" type="text" name="name" id="name"> </br>
 				<label for="duration">Duration</label> </br>
-				<input class="userInput rounded" type="text" name="duration" id="duration"> </br>
+				<input class="userInput rounded" style="width: 250px;" type="text" name="duration" id="duration"> </br>
 				<label for="team_size">Team Size</label> </br>
-				<input class="userInput rounded" type="text" name="team_size" id="team_size"> </br>
-				<button class="btn saveButton mt-2" type="submit">Add Game</button>
-				<a class="btn deleteButton mt-2" href="/games" role="button">Discard</a>
+				<input class="userInput rounded" style="width: 250px;" type="text" name="team_size" id="team_size"> </br>
+				<button class="btn saveButton mt-3" style="width: 123px;" type="submit">Add Game</button>
+				<a class="btn deleteButton mt-3" style="width: 123px;" href="/games" role="button">Discard</a>
 			</form>
 		</div>
 	</div>

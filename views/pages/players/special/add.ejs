@@ -18,18 +18,18 @@
 		</div>
 	<% } %>
 	
-	<div class="container h-100 d-flex justify-content-center align-items-center">
+	<div class="container h-100 d-flex justify-content-center align-items-center" style="width:700px;">
 		<div class="container w-50 shadow p-3 mb-5 darker rounded">
 			<form action="http://localhost:3000/player/games/add/:id" method="post">
-				<h2>Add Game to Player</h1>
+				<h2 class="text-center"><strong>Add Game to Player</strong></h1>
 					<input name="player_id" value="<%= playerid %>" hidden> <br>
 				<select name="game_id" class="form-select gameSelect">
 					<% gamesArray.forEach((game) => { %>
 						<option value="<%= game.game_id %>"><%= game.name %></option>
 					<% }) %>
 				</select>
-				<button class="btn saveButton mt-2" type="submit">Add Game</button>
-				<a class="btn btn-secondary mt-2" href="/player/games/<%= playerid %>" role="button">Go Back</a>
+				<button class="btn saveButton mt-3" style="width:150px;" type="submit">Add Game</button>
+				<a class="btn btn-secondary mt-3" style="width:150px;" href="/player/games/<%= playerid %>" role="button">Go Back</a>
 			</form>
 		</div>
 	</div>
