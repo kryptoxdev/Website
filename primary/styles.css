@@ -112,6 +112,7 @@ body {
 }
 
 .link:hover {
+	border-radius: 7px;
 	background-color: #22303d;
 }
 
